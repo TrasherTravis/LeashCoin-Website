@@ -1,0 +1,544 @@
+@font-face {
+    font-family: 'Eurostile';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Eurostile'), url('eurostile') format('woff');
+}
+
+@font-face {
+    font-family: 'interface2';
+    font-style: normal;
+    font-weight: normal;
+    src: local('interface2'), url('interface2') format('woff');
+}
+
+:root {
+    --main-color: #45BAFD;
+    --sec-color: white;
+    --dark-bg: #0B0A24;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'interface2', sans-serif;
+    color: var(--sec-color);
+    background: linear-gradient(to bottom, #171652, #0b0a25, black);
+    letter-spacing: 1.2px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6, footer.main, .title {
+    font-family: 'Eurostile';
+    color: var(--main-color);
+}
+
+.btn {
+    font-family: 'Eurostile';
+    border: 2px solid var(--main-color);
+    border-radius: 30px;
+    font-weight: bold;
+    padding: 7px 20px;
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    outline: none;
+    font-size: large;
+    color: var(--main-color);
+    transition: all 0.2s linear;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--main-color);
+    color: var(--sec-color) !important;
+}
+
+.btn:visited {
+    color: var(--main-color);
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+main .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .logo span {
+    font-weight: bold;
+}
+
+main .logo img {
+    width: 70px;
+    height: 100%;
+    object-fit: contain;
+}
+
+main .text {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-80%) !important;
+    font-size: 1.8rem;
+    padding: 0 20px;
+    width: 100%;
+    text-align: center;
+}
+
+main .btns {
+    position: absolute;
+    top: 15%;
+}
+
+.main-btns .btn {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.main-btns .btn:first-child {
+    margin-top: 40px;
+}
+
+main .btns .btn {
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    font-size: small;
+    background-color: var(--main-color);
+    color: var(--sec-color);
+}
+
+main .btns .btn:hover {
+    color: var(--main-color);
+    background-color: transparent;
+}
+
+main .btns .btn:last-child {
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+main .cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+    /* animation: move 5s infinite; */
+    height: 100%;
+    width: 100%;
+}
+
+main .cover video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: none;
+    object-position: top;
+    pointer-events: none;
+}
+
+main .cover video.v1 {
+    display: unset;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, 30px);
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+article.content {
+    background-color: var(--dark-bg);
+    padding: 30px 20px;
+    margin: 30px 0;
+    line-height: 2;
+}
+
+article.content h2 {
+    text-align: center;
+}
+
+article.content .content p:first-child {
+    margin: 30px 0;
+}
+
+.timeline {
+    position: relative;
+    width: 85vw;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--main-color);
+    top: 150px;
+    bottom: 0;
+    left: 50%;
+    border-radius: 10px;
+    margin-left: -3px;
+}
+
+.timeline .title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 70px;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    margin-top: 150px;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -15px;
+    background-color: var(--main-color);
+    border: 4px solid var(--sec-color);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.right::after {
+    left: -13px;
+}
+
+.content {
+    padding: 10px 30px;
+    position: relative;
+}
+
+.content .item {
+    margin-top: 30px;
+    background-color: var(--sec-color);
+    border-radius: 20px;
+    padding: 20px 30px;
+    position: relative;
+    color: black;
+    font-size: large;
+}
+
+.content .item::before {
+    content: '';
+    height: 100%;
+    width: 20px;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 0;
+    left: -8px;
+    z-index: -1;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+    .container {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 5px;
+    }
+    .container::before {
+        left: 60px;
+        border: medium solid var(--main-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--main-color) transparent transparent;
+    }
+    .left::after, .right::after {
+        left: 15px;
+    }
+    .right {
+        left: 0%;
+    }
+}
+
+article.text {
+    padding: 50px 10px;
+    background-color: var(--dark-bg);
+    line-height: 2;
+    text-align: center;
+    margin: 0 20px;
+    border-radius: 20px;
+}
+
+.tokenomics {
+    margin: 20px;
+    text-align: center;
+}
+
+.tokenomics .part1 {
+    margin-top: 20px;
+}
+
+.tokenomics .part1>.btn {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.tokenomics .part1 .table .item:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tokenomics .part1 .table .item:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tokenomics .part1 .table .item {
+    display: flex;
+    height: 100px;
+    border: 1px solid var(--main-color);
+}
+
+.tokenomics .part1 .table .item>* {
+    display: grid;
+    place-items: center;
+    width: 50%;
+}
+
+.tokenomics .part1 .table .item .heading {
+    background-color: var(--main-color);
+    word-break: keep-all;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.tokenomics .part1 .table .item .value {
+    padding: 0 5px;
+    word-break: break-all;
+}
+
+.tokenomics .part2 h5 {
+    font-size: large;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.tokenomics .part2 .btns .btn {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.tokenomics .part2 .info {
+    font-style: italic;
+    font-size: small;
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+footer .main {
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+footer .icons {
+    margin: 20px 0;
+    font-size: x-large;
+}
+
+footer .icons a {
+    outline: none;
+    text-decoration: none;
+    color: var(--sec-color);
+}
+
+footer .icons a:visited {
+    color: var(--sec-color);
+}
+
+footer .icons a:not(:last-child) {
+    margin-right: 40px;
+}
+
+footer .copyright {
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    main .cover video.v1, main .cover video.v3 {
+        display: none;
+    }
+    main .cover video.v2 {
+        display: unset;
+    }
+    main .text {
+        font-size: 2rem;
+    }
+    main .btns {
+        position: absolute;
+        top: 50%;
+        left: 50px;
+        transform: translateY(-50%);
+        display: unset;
+    }
+    .main-btns {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main .cover video.v1, main .cover video.v2 {
+        display: none;
+    }
+    main .cover video.v3 {
+        display: unset;
+    }
+    footer {
+        display: flex;
+        margin-top: 80px;
+        justify-content: space-around;
+    }
+    footer .main {
+        padding-top: 10px;
+    }
+    .tokenomics .part1 .table .item {
+        display: block;
+        height: unset;
+    }
+    .tokenomics .part1 .table {
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+    }
+    .tokenomics .part1 .table .item>* {
+        width: 100%;
+        height: 100px;
+    }
+    .tokenomics .part2 {
+        margin-top: 120px;
+    }
+    .tokenomics .part1 .table .item:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: unset;
+    }
+    .tokenomics .part1 .table .item:last-child {
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .tokenomics .part2 .btns {
+        display: flex;
+    }
+    .tokenomics .part2 .info {
+        margin-top: 40px;
+    }
+    article.content .content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 40px;
+        margin-top: 20px;
+        padding: 10px 50px;
+    }
+    article.content .content span {
+        display: block;
+        margin-bottom: 20px;
+    }
+    article.content .content p {
+        margin: 10px 0 !important;
+    }
+    .container:last-child {
+        padding-bottom: 100px;
+    }
+    article.text {
+        padding: 50px 50px;
+        margin: 0 40px;
+    }
+    main .btns .btn:last-child {
+        margin-bottom: 70px;
+    }
+    main .text {
+        font-size: 2.5rem;
+    }
+    main .btns .btn {
+        margin-bottom: 30px;
+        padding: 7px 20px;
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .tokenomics {
+        margin: 150px 150px;
+    }
+    .tokenomics .part1 {
+        margin-top: 40px;
+    }
+    .tokenomics .part1>.btn {
+        margin-bottom: 40px;
+    }
+    footer {
+        margin-bottom: 50px;
+        margin-top: 150px;
+    }
+    article.text {
+        margin: 0 10vw;
+    }
+    main .btns {
+        left: 180px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .tokenomics .part1 .table .item .value {
+        font-size: small;
+    }
+}
